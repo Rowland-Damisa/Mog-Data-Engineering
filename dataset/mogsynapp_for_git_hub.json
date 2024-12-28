@@ -1,0 +1,33 @@
+{
+	"name": "mogsynapp_for_git_hub",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSynapseAnalytics1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [
+			{
+				"name": "Movies_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Movies_url",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Movies_IMAX",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Movies_Rating",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "run_results"
+		}
+	}
+}

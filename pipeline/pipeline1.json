@@ -26,11 +26,80 @@
 							"type": "DelimitedTextReadSettings"
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "SqlDWSink",
+						"writeBehavior": "Insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Movies_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Movies_name",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Movies_url",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Movies_url",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Movies_IMAX",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Movies_IMAX",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Movies_Rating",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Movies_Rating",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
 						"referenceName": "mogsynapp",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "mogsynapp_for_git_hub",
 						"type": "DatasetReference"
 					}
 				]
