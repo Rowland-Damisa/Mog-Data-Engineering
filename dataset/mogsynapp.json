@@ -1,0 +1,40 @@
+{
+	"name": "mogsynapp",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "run_results.csv",
+				"fileSystem": "mogcsvfile"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Movies_name",
+				"type": "String"
+			},
+			{
+				"name": "Movies_url",
+				"type": "String"
+			},
+			{
+				"name": "Movies_IMAX",
+				"type": "String"
+			},
+			{
+				"name": "Movies_Rating",
+				"type": "String"
+			}
+		]
+	}
+}
